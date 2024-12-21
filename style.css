@@ -1,0 +1,296 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Screen */
+.login-screen {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.login-box {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.login-box h1 {
+    color: #ff0000;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-box h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.login-box p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Google Sign-in Button */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    color: #333;
+    padding: 12px 24px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.google-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.google-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Dashboard */
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.dashboard header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sign-out-btn {
+    background-color: #ff0000;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sign-out-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Exam Options */
+.exam-options {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mode-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.mode-btn {
+    background-color: #ff0000;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.mode-btn:hover {
+    background-color: #cc0000;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Exam Screen Styles */
+.exam-screen {
+    padding: 2rem;
+}
+
+.timer {
+    font-size: 1.5rem;
+    color: #ff0000;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.question-counter {
+    font-size: 1.5rem;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.question-container {
+    margin-top: 60px; /* Space for timer and question counter */
+}
+
+/* Center the question text */
+.question-container h3 {
+    text-align: center; /* Center the question text */
+    margin-bottom: 20px; /* Space below the question */
+}
+
+/* Answer Options Styles */
+.answer-option {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the box */
+    margin: 10px 0; /* Space between options */
+    transition: background-color 0.3s; /* Smooth background change */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+/* Change background color on hover */
+.answer-option:hover {
+    background-color: #ffcccc; /* Light red background on hover */
+}
+
+/* Selected Answer Option Styles */
+.answer-option.selected {
+    background-color: #ffcccc; /* Light red background for selected answer */
+    border-color: #ff0000; /* Darker border color for selected answer */
+}
+
+/* Hide the radio button */
+.answer-option input {
+    display: none; /* Hide the radio button */
+}
+
+/* Style the label to act as the clickable area */
+.answer-option label {
+    width: 100%; /* Make label take full width */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Review Screen Styles */
+.review-screen {
+    padding: 2rem;
+}
+
+.review-item {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the box */
+    margin: 10px 0; /* Space between items */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.review-item h4 {
+    margin-bottom: 5px; /* Space below question */
+}
+
+.review-item p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Progress Section Styles */
+.progress {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.progress h2 {
+    margin-bottom: 0.5rem;
+}
+
+.progress p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Card Container Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    width: 150px; /* Fixed width for cards */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Exam Mode Header Styles */
+.exam-mode header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.exam-mode h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.exam-mode p {
+    font-size: 1.2rem;
+    color: #666;
+}

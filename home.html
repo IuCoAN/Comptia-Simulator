@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CompTIA A+ Exam Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="dashboard" class="dashboard hidden">
+            <header>
+                <h1>Welcome, <span id="user-name">User</span>!</h1>
+                <div class="progress">
+                    <h2>Your Learning Progress</h2>
+                    <p id="learning-progress">You have completed <span id="progress-percentage">0</span>% of your practice questions.</p>
+                </div>
+                <button id="sign-out" class="sign-out-btn">Sign Out</button>
+            </header>
+            <div class="exam-options">
+                <h2>Choose Your Mode</h2>
+                <div class="mode-buttons">
+                    <button id="practice-mode" class="mode-btn">Practice Mode</button>
+                    <button id="exam-mode" class="mode-btn">Exam Mode</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Firebase -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html> 
