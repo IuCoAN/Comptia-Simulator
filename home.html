@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="dashboard" class="dashboard hidden">
+        <div id="dashboard" class="dashboard">
             <header>
                 <h1>Welcome, <span id="user-name">User</span>!</h1>
                 <div class="progress">
@@ -18,11 +18,26 @@
                 </div>
                 <button id="sign-out" class="sign-out-btn">Sign Out</button>
             </header>
-            <div class="exam-options">
-                <h2>Choose Your Mode</h2>
-                <div class="mode-buttons">
-                    <button id="practice-mode" class="mode-btn">Practice Mode</button>
-                    <button id="exam-mode" class="mode-btn">Exam Mode</button>
+
+            <div class="transparent-box">
+                <div class="mode-section">
+                    <h2>Practice Mode</h2>
+                    <div class="mode-buttons">
+                        <button class="category-btn" onclick="startPractice('A+')">CompTIA A+</button>
+                        <button class="category-btn" onclick="startPractice('Network+')">CompTIA Network+</button>
+                        <button class="category-btn" onclick="startPractice('Security+')">CompTIA Security+</button>
+                        <button class="category-btn" onclick="startPractice('Data+')">CompTIA Data+</button>
+                    </div>
+                </div>
+
+                <div class="mode-section">
+                    <h2>Exam Mode</h2>
+                    <div class="mode-buttons">
+                        <button class="category-btn" onclick="startExam('A+')">CompTIA A+</button>
+                        <button class="category-btn" onclick="startExam('Network+')">CompTIA Network+</button>
+                        <button class="category-btn" onclick="startExam('Security+')">CompTIA Security+</button>
+                        <button class="category-btn" onclick="startExam('Data+')">CompTIA Data+</button>
+                    </div>
                 </div>
             </div>
         </div>

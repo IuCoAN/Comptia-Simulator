@@ -94,9 +94,10 @@ body {
     align-items: center;
     margin-bottom: 2rem;
     padding: 1rem;
-    background-color: white;
+    background-color: #FFAAAA;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
 .sign-out-btn {
@@ -293,4 +294,79 @@ body {
 .exam-mode p {
     font-size: 1.2rem;
     color: #666;
+}
+
+/* Mode Section Styles */
+.mode-section {
+    width: 100%; /* Set width to 100% to match the transparent box */
+    padding: 10px; /* Padding inside the section */
+    border: 1px solid #ddd; /* Border for the section */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color */
+    margin: 10px 0; /* Space above and below the section */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.mode-section h2 {
+    text-align: center;
+    color: #333;
+}
+
+.mode-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Stretch buttons to fill the width */
+    width: 100%; /* Ensure buttons take full width */
+}
+
+.category-btn {
+    background-color: #FFAAAA; /* Set background color to FFAAAA */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the button */
+    margin: 5px 0; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    flex: 1; /* Allow buttons to grow and fill the available space */
+}
+
+.category-btn:hover {
+    background-color: #FF8888; /* Darker shade on hover */
+}
+
+/* Sub Button Styles */
+.sub-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Space above the sub-buttons */
+}
+
+.sub-buttons .category-btn {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sub-buttons .category-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Transparent Box Styles */
+.transparent-box {
+    background-color: rgba(255, 170, 170, 0.5); /* #FFAAAA with transparency */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below the box */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
 }

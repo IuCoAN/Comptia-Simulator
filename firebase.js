@@ -4,6 +4,7 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js';
 
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAPELmhZcf9ZR0aAmWosH2s2KIY-W3Vw54",
     authDomain: "readyfy-c966f.firebaseapp.com",
