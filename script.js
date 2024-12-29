@@ -7,13 +7,7 @@ const provider = new GoogleAuthProvider();
 // DOM Elements
 const googleSignInBtn = document.getElementById('google-sign-in');
 const signOutBtn = document.getElementById('sign-out');
-const loginScreen = document.getElementById('login-screen');
-const dashboard = document.getElementById('dashboard');
 const userNameSpan = document.getElementById('user-name');
-const practiceModeBtn = document.getElementById('practice-mode');
-
-let correctAnswers = 0; // Track correct answers
-let userAnswers = []; // Track user answers
 
 // Sign in with Google
 async function signInWithGoogle() {
@@ -22,8 +16,8 @@ async function signInWithGoogle() {
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
         console.log("Successfully signed in:", user.email);
-        // Redirect to home page after successful login
-        window.location.href = 'home.html';
+        // Show Welcome + username message on index.html after successful login
+        document.getElementById('user-name').textContent = `Welcome, ${user.displayName || 'User'}!`;
     } catch (error) {
         console.error("Error signing in with Google: ", error);
         alert("Error signing in. Please try again.");
@@ -46,11 +40,8 @@ async function handleSignOut() {
 async function updateUIOnAuth(user) {
     if (user) {
         userNameSpan.textContent = user.displayName || 'User';
-        if (loginScreen) loginScreen.classList.add('hidden');
-        if (dashboard) dashboard.classList.remove('hidden');
     } else {
-        if (loginScreen) loginScreen.classList.remove('hidden');
-        if (dashboard) dashboard.classList.add('hidden');
+        userNameSpan.textContent = 'User'; // Reset to default
     }
 }
 
@@ -60,8 +51,8 @@ auth.onAuthStateChanged((user) => {
     updateUIOnAuth(user);
 });
 
+// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    // Event Listeners
     if (googleSignInBtn) {
         googleSignInBtn.addEventListener('click', signInWithGoogle);
     }
@@ -69,18 +60,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (signOutBtn) {
         signOutBtn.addEventListener('click', handleSignOut);
     }
-
-    if (practiceModeBtn) {
-        practiceModeBtn.addEventListener('click', () => {
-            console.log('Practice mode selected');
-            // Add your practice mode logic here
-        });
-    }
 });
 
-// Function to start practice mode for a specific certification
-function startPractice(certification) {
-    console.log(`Starting practice mode for ${certification}`);
-    // Implement logic to load questions based on the selected certification
-    // Redirect to the practice mode screen or load the questions directly
+function renderButton() {
+    if (userIsLoggedIn) {
+        return <button onClick={handleSignOut}>Sign Out</button>;
+    } else {
+        return <button onClick={handleLogin}>Login</button>;
+    }
+}
+
+function updateButtonVisibility(userIsLoggedIn) {
+    const signOutButton = document.getElementById('sign-out');
+    if (userIsLoggedIn) {
+        signOutButton.style.display = 'block'; // Show the Sign Out button
+    } else {
+        signOutButton.style.display = 'none'; // Hide the Sign Out button
+    }
+}
+
+// Call this function with the appropriate login status
+updateButtonVisibility(userIsLoggedIn);
+
+function handleLogin() {
+    // Perform login logic...
+    // On success:
+    window.location.href = '/dashboard'; // Update this to the correct existing page
 }
